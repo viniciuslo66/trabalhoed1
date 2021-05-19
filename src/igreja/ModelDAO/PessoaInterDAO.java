@@ -2,7 +2,6 @@ package igreja.ModelDAO;
 
 import java.sql.SQLException;
 
-import igreja.ModelVO.LiderVO;
 import igreja.ModelVO.PessoaVO;
 	
 	public interface PessoaInterDAO<VO extends PessoaVO> extends ConnectBDinterDAO<VO>{
