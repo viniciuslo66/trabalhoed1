@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="800.0" prefWidth="1200.0">
+        <items>
+          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="798.0" prefWidth="247.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagens/LOGO_IPB_CMYK-sarca-1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="76.0" fitWidth="157.0" layoutX="45.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagens/PROR_-_Logo-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <MenuButton alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="307.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #005131;" text="Igrejas" textAlignment="CENTER" textFill="#f8f7f7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </MenuButton>
+                  <MenuButton alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="399.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #005131;" text="Pessoas" textAlignment="CENTER" textFill="#f8f7f7" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </MenuButton>
+                  <MenuButton alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="503.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #005131;" text="Avisos" textAlignment="CENTER" textFill="#f8f7f7" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </MenuButton>
+                  <MenuButton alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="613.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #005131;" text="Relatórios" textAlignment="CENTER" textFill="#f8f7f7" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </MenuButton>
+                  <MenuButton alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="708.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #005131;" text="Ajuda" textAlignment="CENTER" textFill="#f8f7f7" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </MenuButton>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="798.0" prefWidth="881.0">
+               <children>
+                  <Label layoutX="150.0" layoutY="14.0" text="Igreja Presbiteriana do Brasil">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="70.0" layoutY="145.0" prefHeight="25.0" prefWidth="50.0" promptText="001">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox layoutX="707.0" layoutY="200.0" prefHeight="25.0" prefWidth="175.0" promptText="Líder" visibleRowCount="3" />
+                  <TextField layoutX="70.0" layoutY="200.0" prefHeight="25.0" prefWidth="610.0" promptText="Giovanni Moreira Guimarães">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="70.0" layoutY="255.0" prefHeight="25.0" prefWidth="174.0" promptText="59628-395">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="70.0" layoutY="310.0" prefHeight="25.0" prefWidth="610.0" promptText="Rua Raimundo Firmino de Oliveira, 507">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="280.0" layoutY="255.0" prefHeight="30.0" prefWidth="128.0" promptText="(84)99660-9271">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="443.0" layoutY="255.0" prefHeight="30.0" prefWidth="237.0" promptText="webminst@hotmail.com">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="277.0" layoutY="475.0" prefHeight="30.0" prefWidth="174.0" promptText="Pastor">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="260.0" layoutY="365.0" promptText="Mossoró">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="452.0" layoutY="365.0" prefHeight="25.0" prefWidth="37.0" promptText="RN">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="506.0" layoutY="365.0" prefHeight="25.0" prefWidth="174.0" promptText="Casa 11">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="70.0" layoutY="365.0" prefHeight="25.0" prefWidth="175.0" promptText="Costa e Silva">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="708.0" layoutY="365.0" prefHeight="25.0" prefWidth="175.0" promptText="Supermercado Queiroz">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="243.0" layoutY="420.0" prefHeight="25.0" prefWidth="237.0" promptText="Abilene da Silva Costa Guimarães">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <DatePicker layoutX="707.0" layoutY="255.0" promptText="24/08/1968" />
+                  <TextArea layoutX="70.0" layoutY="585.0" prefHeight="50.0" prefWidth="815.0" promptText="Anotações importantes" text="&#10;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextArea>
+                  <TextField layoutX="709.0" layoutY="310.0" prefHeight="25.0" prefWidth="174.0" promptText="Rio de Janeiro">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="71.0" layoutY="125.0" text="ID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="180.0" text="Nome">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="235.0" text="CEP">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="290.0" text="Logradouro">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="281.0" layoutY="235.0" text="Telefone">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="507.0" layoutY="235.0" text="E-mail">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="73.0" layoutY="455.0" text="Sexo">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="346.0" text="Bairro">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="261.0" layoutY="345.0" text="Cidade">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="453.0" layoutY="345.0" text="UF">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="507.0" layoutY="345.0" text="Complemento">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="244.0" layoutY="400.0" text="Cônjuge">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="708.0" layoutY="235.0" text="Nascimento">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox layoutX="72.0" layoutY="420.0" prefWidth="150.0" promptText="Casado" visibleRowCount="4" />
+                  <Label layoutX="73.0" layoutY="400.0" text="Estado Cívil">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="708.0" layoutY="180.0" text="Tipo">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="709.0" layoutY="345.0" text="Ponto de referência">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="709.0" layoutY="400.0" text="Escolaridade">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="565.0" text="Observações">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="710.0" layoutY="290.0" text="Naturalidade">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ListView layoutX="70.0" layoutY="672.0" prefHeight="104.0" prefWidth="815.0" />
+                  <Label layoutX="71.0" layoutY="649.0" text="Pessoas Cadastradas">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="708.0" layoutY="118.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #005131;" text="Salvar" textFill="#f5f5f5">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="802.0" layoutY="118.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #005131;" text="Cancelar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="377.0" layoutY="92.0" text="Pessoas">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <DatePicker layoutX="506.0" layoutY="420.0" promptText="24/08/1968" />
+                  <Label layoutX="507.0" layoutY="400.0" text="Casamento">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox layoutX="708.0" layoutY="420.0" prefHeight="25.0" prefWidth="175.0" promptText="Superior" visibleRowCount="3" />
+                  <ComboBox layoutX="72.0" layoutY="475.0" prefHeight="25.0" prefWidth="150.0" promptText="Masculino" visibleRowCount="3" />
+                  <Label layoutX="278.0" layoutY="455.0" text="Profissão">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="70.0" layoutY="530.0" prefHeight="30.0" prefWidth="382.0" promptText="Germínio Guimarães">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="73.0" layoutY="510.0" text="Pai">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="500.0" layoutY="530.0" prefHeight="30.0" prefWidth="382.0" promptText="Maria Adília Moreira Guimarães">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="502.0" layoutY="510.0" text="Mãe">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="500.0" layoutY="475.0" prefHeight="30.0" prefWidth="382.0" promptText="Igreja Presbiteriana Central">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="501.0" layoutY="455.0" text="Onde Congrega">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

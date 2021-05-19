@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import igreja.ModelVO.IgrejaVO;
 import igreja.ModelVO.LiderVO;
 import igreja.ModelVO.PessoaVO;
 
@@ -69,15 +70,19 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 		cal.setTime(date);
 		return cal;
 	}
-	
+
 	public void inserir(LiderVO lider) throws SQLException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		
-		String sql = "insert into lider(idPessoa, dataPriEleicao, dataUltEleicao, CargoOficio, entidade) values(?,?,?,?)";
+
+		String sql = "insert into lider(idPessoa, dataPriEleicao, dataUltEleicao, CargoOficio, entidade) values(?,?,?,?,?)";
 		PreparedStatement ptst;
 		try {
 			ptst = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			ptst.setInt(1, lider.getIdPessoa());
+			ptst.setDate(2, new Date(((LiderVO) lider).getDataPriEleicao().getTimeInMillis()));
+			ptst.setDate(3, new Date(((LiderVO) lider).getDataUltEleicao().getTimeInMillis()));
+			ptst.setInt(4, lider.getCargoOficio());
+			ptst.setInt(5, lider.getEntidade());
 
 			int affectedRows = ptst.executeUpdate();
 
@@ -95,11 +100,6 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 		}
 	}
 
-	private int toCalendar(int i, Calendar dataPriEleicao) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 	@Override
 	public void remover(VO lider) throws SQLException {
 		String sql = "DELETE FROM visitante WHERE idComun=?";
@@ -113,11 +113,19 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 			ex.printStackTrace();
 		}
 	}
-
-	@Override
-	public ResultSet buscar(VO vo) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public ResultSet buscar(LiderVO lider) {
+		String sql = "select  from Pessoa inner join Comungante where Pessoa.idPessoa = Lider.idPessoa";
+		PreparedStatement ptst;
+		ResultSet resultado = null;
+		try {
+			ptst = getConnection().prepareStatement(sql);
+			ptst.setInt(1, lider.getIdLider());
+			resultado = ptst.executeQuery();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		return resultado;
 	}
 
 	@Override
