@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 public class ComunVO extends PessoaVO {
 
-	SimpleDateFormat sdf = new SimpleDateFormat("d/M/y");
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	// Variáveis
 	private int idComun;
@@ -22,6 +22,15 @@ public class ComunVO extends PessoaVO {
 	private Calendar dataDemissao;
 	private int meioDemissao;
 	private boolean situacao;
+	private PessoaVO pessoa;
+
+	public PessoaVO getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(PessoaVO pessoa) {
+		this.pessoa = pessoa;
+	}
 
 	// M�todos Especiais - Getters e Setters
 	public int getIdComun() {

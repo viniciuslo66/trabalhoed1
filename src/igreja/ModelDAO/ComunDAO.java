@@ -14,7 +14,7 @@ import igreja.ModelVO.PessoaVO;
 
 public class ComunDAO<VO extends PessoaVO> extends ConnectBD {
 
-	public List<ComunVO> listar() {
+	public List<ComunVO> listar() throws SQLException{
 		String sql = "select * from Pessoa inner join Comungante where Pessoa.idPessoa = Comungante.idPessoa";
 		Statement st;
 		ResultSet resultado = null;
@@ -26,7 +26,6 @@ public class ComunDAO<VO extends PessoaVO> extends ConnectBD {
 			while (resultado.next()) {
 				ComunVO com = new ComunVO();
 				com.setIdPessoa(resultado.getInt("idPessoa"));
-				((ComunVO) com).setIdComun(resultado.getInt("idComun"));
 				com.setNomePessoa(resultado.getString("nomePessoa"));
 				com.setCongregaPessoa(resultado.getInt("congregaPessoa"));
 				com.setLogradouroPessoa(resultado.getString("logradouroPessoa"));
@@ -50,11 +49,23 @@ public class ComunDAO<VO extends PessoaVO> extends ConnectBD {
 				com.setNomePaiPessoa(resultado.getString("nomePaiPessoa"));
 				com.setNomeMaePessoa(resultado.getString("nomeMaePessoa"));
 				com.setProfissaoPessoa(resultado.getString("profissaoPessoa"));
+				((ComunVO) com).setIdComun(resultado.getInt("idComun"));
+				((ComunVO) com).setNumOrdem(resultado.getInt("numOrdem"));
+				((ComunVO) com).setDataBatismo(toCalendar(resultado.getDate("dataBatismo")));
+				((ComunVO) com).setPastorBatismo(resultado.getString("pastorBatismo"));
+				((ComunVO) com).setIgrejaBatismo(resultado.getString("igrejaBatismo"));
+				((ComunVO) com).setDataProfFe(toCalendar(resultado.getDate("dataProffe")));
+				((ComunVO) com).setTipoMembro(resultado.getInt("tipoMembro"));
+				((ComunVO) com).setDataAdmissao(toCalendar(resultado.getDate("dataAdmissao")));
+				((ComunVO) com).setMeioAdmissao(resultado.getInt("meioAdmissao"));
+				((ComunVO) com).setDataDemissao(toCalendar(resultado.getDate("dataDemissao")));
+				((ComunVO) com).setMeioDemissao(resultado.getInt("meiodemissao"));
+				((ComunVO) com).setSituacao(resultado.getBoolean("situacao"));
 
 				comun.add(com);
 			}
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return comun;
 	}
@@ -65,13 +76,26 @@ public class ComunDAO<VO extends PessoaVO> extends ConnectBD {
 		return cal;
 	}
 
-	public void inserir(VO comun) throws SQLException {
-		String sql = "insert into comun(idComun, idPessoa) values(?,?)";
+	public void inserir(ComunVO comun) throws SQLException {
+		String sql = "insert into comun(idPessoa, numOrdem, dataBatismo, pastorBatismo, igrejaBatismo, dataProffe, PastorProffe "
+				+ "igrejaProffe, tipoMembro, dataAdmissao. meioAdmissao, dataDemissao, meioDemissao, situacao) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ptst;
 		try {
 			ptst = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			ptst.setInt(1, ((ComunVO) comun).getIdComun());
-			ptst.setInt(2, comun.getIdPessoa());
+			ptst.setInt(1, comun.getIdPessoa());
+			ptst.setInt(2, comun.getNumOrdem());
+			ptst.setDate(3, new Date(comun.getDataBatismo().getTimeInMillis()));
+			ptst.setString(4, comun.getPastorBatismo());
+			ptst.setString(5, comun.getIgrejaBatismo());
+			ptst.setDate(6, new Date(comun.getDataProfFe().getTimeInMillis()));
+			ptst.setString(7, comun.getPastorProfFe());
+			ptst.setString(8, comun.getIgrejaProfFe());
+			ptst.setInt(9, comun.getTipoMembro());
+			ptst.setDate(10, new Date(comun.getDataAdmissao().getTimeInMillis()));
+			ptst.setInt(11, comun.getMeioAdmissao());
+			ptst.setDate(12, new Date(comun.getDataDemissao().getTimeInMillis()));
+			ptst.setInt(13, comun.getMeioDemissao());
+			ptst.setBoolean(14, comun.isSituacao());
 
 			int affectedRows = ptst.executeUpdate();
 
@@ -102,8 +126,42 @@ public class ComunDAO<VO extends PessoaVO> extends ConnectBD {
 		}
 	}
 
-	public ResultSet buscar(ComunVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResultSet buscar(ComunVO lider) throws SQLException {
+		String sql = "select nome from Pessoa inner join comungante where Pessoa.idPessoa = comungante.idPessoa";
+		PreparedStatement ptst;
+		ResultSet resultado = null;
+		try {
+			ptst = getConnection().prepareStatement(sql);
+			ptst.setInt(1, lider.getIdComun());
+			resultado = ptst.executeQuery();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		return resultado;
+	}
+
+	public ComunVO buscarById(Integer id) throws SQLException {
+		String sql = "SELECT pessoa.nomePessoa, comungante.numOrdem FROM pessoa "
+				+ "INNER JOIN comunganteON lider.idPessoa = pessoa.idPessoa WHERE comungante.idComun = ?";
+		PreparedStatement ptst;
+		ResultSet res = null;
+		ComunVO lider = new ComunVO();
+		PessoaVO pessoa = new PessoaVO();
+
+		try {
+			ptst = getConnection().prepareStatement(sql);
+			ptst.setInt(1, id);
+			res = ptst.executeQuery();
+			if (res.next()) {
+				pessoa.setNomePessoa(res.getString("NomePessoa"));
+				lider.setNumOrdem(res.getInt("numOrdem"));
+				lider.setPessoa(pessoa);
+			}
+			return null;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return lider;
 	}
 }

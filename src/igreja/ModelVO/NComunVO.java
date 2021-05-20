@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 public final class NComunVO extends PessoaVO {
 	
-	SimpleDateFormat sdf = new SimpleDateFormat("d/M/y");
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	// Variáveis
 	private int idNComun;

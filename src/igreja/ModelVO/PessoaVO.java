@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 public class PessoaVO {
 	
-	SimpleDateFormat sdf = new SimpleDateFormat("d/M/y");
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	// Variáveis
 	private int idPessoa;

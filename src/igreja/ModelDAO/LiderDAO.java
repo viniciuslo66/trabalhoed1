@@ -26,11 +26,6 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD {
 			while (resultado.next()) {
 				LiderVO lid = new LiderVO();
 				lid.setIdPessoa(resultado.getInt("idPessoa"));
-				((LiderVO) lid).setIdLider(resultado.getInt("idLider"));
-				((LiderVO) lid).setDataPriEleicao(toCalendar(resultado.getDate("DataPriEleicao")));
-				((LiderVO) lid).setDataUltEleicao(toCalendar(resultado.getDate("DataUltEleicao")));
-				((LiderVO) lid).setCargoOficio(resultado.getInt("cargoOficial"));
-				((LiderVO) lid).setEntidade(resultado.getInt("entidade"));
 				lid.setNomePessoa(resultado.getString("nomePessoa"));
 				lid.setCongregaPessoa(resultado.getInt("congregaPessoa"));
 				lid.setLogradouroPessoa(resultado.getString("logradouroPessoa"));
@@ -54,11 +49,16 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD {
 				lid.setNomePaiPessoa(resultado.getString("nomePaiPessoa"));
 				lid.setNomeMaePessoa(resultado.getString("nomeMaePessoa"));
 				lid.setProfissaoPessoa(resultado.getString("profissaoPessoa"));
+				lid.setIdLider(resultado.getInt("idLider"));
+				lid.setDataPriEleicao(toCalendar(resultado.getDate("DataPriEleicao")));
+				lid.setDataUltEleicao(toCalendar(resultado.getDate("DataUltEleicao")));
+				lid.setCargoOficio(resultado.getInt("cargoOficial"));
+				lid.setEntidade(resultado.getInt("entidade"));
 
 				lider.add(lid);
 			}
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return lider;
 	}
@@ -76,8 +76,8 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD {
 		try {
 			ptst = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			ptst.setInt(1, lider.getIdPessoa());
-			ptst.setDate(2, new Date(((LiderVO) lider).getDataPriEleicao().getTimeInMillis()));
-			ptst.setDate(3, new Date(((LiderVO) lider).getDataUltEleicao().getTimeInMillis()));
+			ptst.setDate(2, new Date(lider.getDataPriEleicao().getTimeInMillis()));
+			ptst.setDate(3, new Date(lider.getDataUltEleicao().getTimeInMillis()));
 			ptst.setInt(4, lider.getCargoOficio());
 			ptst.setInt(5, lider.getEntidade());
 
@@ -111,7 +111,7 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD {
 	}
 
 	public ResultSet buscar(LiderVO lider) throws SQLException {
-		String sql = "select nome from Pessoa inner join Comungante where Pessoa.idPessoa = Lider.idPessoa";
+		String sql = "select nome from Pessoa inner join lider where pessoa.idPessoa = lider.idPessoa";
 		PreparedStatement ptst;
 		ResultSet resultado = null;
 		try {

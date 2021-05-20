@@ -16,7 +16,7 @@ public class LiderBO {
 		try {
 			ResultSet rs = dao.buscar(vo);
 			if (rs.next()) {
-				throw new InsertException("Impossível inserir, pois já existe um Comungante com esse id");
+				throw new InsertException("Impossível inserir, pois já existe um Lider com esse id");
 			} else {
 				dao.inserir(vo);
 			}
@@ -31,7 +31,7 @@ public class LiderBO {
 			if (rs.next()) {
 				dao.remover(vo);
 			} else {
-				throw new InsertException("Impossível remover, pois não existe nenhum Comungante com esse id");
+				throw new InsertException("Impossível remover, pois não existe nenhum Lider com esse id");
 			}
 		} catch (SQLException e) {
 			throw new InsertException(e.getMessage());
