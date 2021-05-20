@@ -12,7 +12,7 @@ import java.util.List;
 import igreja.ModelVO.LiderVO;
 import igreja.ModelVO.PessoaVO;
 
-public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaInterDAO<VO> {
+public class LiderDAO<VO extends PessoaVO> extends ConnectBD {
 
 	public List<LiderVO> listar() {
 		String sql = "select * from Pessoa inner join Comungante where Pessoa.idPessoa = Lider.idPessoa";
@@ -26,7 +26,7 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 			while (resultado.next()) {
 				LiderVO lid = new LiderVO();
 				lid.setIdPessoa(resultado.getInt("idPessoa"));
-				((LiderVO) lid).setIdComun(resultado.getInt("idLider"));
+				((LiderVO) lid).setIdLider(resultado.getInt("idLider"));
 				((LiderVO) lid).setDataPriEleicao(toCalendar(resultado.getDate("DataPriEleicao")));
 				((LiderVO) lid).setDataUltEleicao(toCalendar(resultado.getDate("DataUltEleicao")));
 				((LiderVO) lid).setCargoOficio(resultado.getInt("cargoOficial"));
@@ -88,7 +88,7 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 			}
 			ResultSet generatedKeys = ptst.getGeneratedKeys();
 			if (generatedKeys.next()) {
-				((LiderVO) lider).setIdComun(generatedKeys.getInt(1));
+				((LiderVO) lider).setIdLider(generatedKeys.getInt(1));
 			} else {
 				throw new SQLException("A inserção falhou. Nenhum id foi retornado.");
 			}
@@ -96,7 +96,7 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 			ex.printStackTrace();
 		}
 	}
-	
+
 	public void remover(VO lider) throws SQLException {
 		String sql = "DELETE FROM lider WHERE idLider = ?";
 		PreparedStatement ptst;
@@ -124,58 +124,28 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 		return resultado;
 	}
 
-	public PessoaVO buscarById (Integer id) throws SQLException {
-		String sql = "SELECT pessoa.nomePessoa, lider.dataPriEleicao, lider.cargoOficial FROM pessoa JOIN lider ON pessoa.idPessoa = lider.idPessoa WHERE lider.idLider = ?";
+	public LiderVO buscarById(Integer id) {
+		String sql = "SELECT pessoa.nomePessoa, lider.cargoOficial FROM pessoa "
+				+ "INNER JOIN lider ON lider.idPessoa = pessoa.idPessoa WHERE lider.idLider = ?";
 		PreparedStatement ptst;
 		ResultSet res = null;
+		LiderVO lider = new LiderVO();
+		PessoaVO pessoa = new PessoaVO();
 
 		try {
 			ptst = getConnection().prepareStatement(sql);
 			ptst.setInt(1, id);
 			res = ptst.executeQuery();
 			if (res.next()) {
-				LiderVO lider = new LiderVO();
-				lider.setIdLider(res.getInt("idLider"));
-
-				PessoaVO pessoa = new PessoaVO();
-				pessoa.setIdPessoa(res.getInt("idPessoa"));
 				pessoa.setNomePessoa(res.getString("NomePessoa"));
-
-
+				lider.setCargoOficio(res.getInt("cargoOficial"));
+				lider.setPessoa(pessoa);
 			}
+			return null;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
-	}
 
-
-	@Override
-	public void alterarEndereco(VO vo) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
-	@Override
-	public void alterarEstadoCivil(VO vo) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void alterarEscolaridade(VO pessoa) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void alterarProfissao(VO vo) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void alterarCongrega(VO pessoa) throws SQLException {
-		// TODO Auto-generated method stub
-
+		return lider;
 	}
 }

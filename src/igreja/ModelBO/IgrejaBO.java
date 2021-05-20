@@ -25,7 +25,7 @@ public class IgrejaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public void alterarPastor(IgrejaVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
@@ -38,7 +38,7 @@ public class IgrejaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public void alterarTipo(IgrejaVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
@@ -51,7 +51,7 @@ public class IgrejaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public void alterarEndereco(IgrejaVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
@@ -64,7 +64,7 @@ public class IgrejaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public void alterarContato(IgrejaVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
@@ -77,7 +77,7 @@ public class IgrejaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public void alterarObservacao(IgrejaVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
@@ -90,7 +90,7 @@ public class IgrejaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public void remover(IgrejaVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
@@ -103,14 +103,14 @@ public class IgrejaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public IgrejaVO buscarIgreja(String nomeIgreja) {
 		// toDO
 		IgrejaVO igreja = new IgrejaVO();
 
 		return igreja;
 	}
-	
+
 	public List<IgrejaVO> listar() {
 		List<IgrejaVO> igrejas = dao.listar();
 

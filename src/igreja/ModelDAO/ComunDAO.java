@@ -12,7 +12,7 @@ import java.util.List;
 import igreja.ModelVO.ComunVO;
 import igreja.ModelVO.PessoaVO;
 
-public class ComunDAO<VO extends PessoaVO> extends ConnectBD implements PessoaInterDAO<VO> {
+public class ComunDAO<VO extends PessoaVO> extends ConnectBD {
 
 	public List<ComunVO> listar() {
 		String sql = "select * from Pessoa inner join Comungante where Pessoa.idPessoa = Comungante.idPessoa";
@@ -106,35 +106,4 @@ public class ComunDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public void alterarEndereco(VO vo) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void alterarEstadoCivil(VO vo) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void alterarEscolaridade(VO pessoa) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void alterarProfissao(VO vo) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void alterarCongrega(VO pessoa) throws SQLException {
-		// TODO Auto-generated method stub
-
-	}
-
 }

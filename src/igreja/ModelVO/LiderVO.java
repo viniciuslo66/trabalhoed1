@@ -1,8 +1,11 @@
 package igreja.ModelVO;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class LiderVO extends ComunVO {
+public class LiderVO extends PessoaVO {
+
+	SimpleDateFormat sdf = new SimpleDateFormat("d/M/y");
 
 	// Variáveis
 	private int idLider;
@@ -10,6 +13,7 @@ public class LiderVO extends ComunVO {
 	private Calendar dataUltEleicao;
 	private int cargoOficio;
 	private int entidade;
+	private PessoaVO Pessoa;
 
 	// Métodos Especiais - Getters e Setters
 	public int getIdLider() {
@@ -26,6 +30,14 @@ public class LiderVO extends ComunVO {
 
 	public void setDataPriEleicao(Calendar dataPriEleicao) {
 		this.dataPriEleicao = dataPriEleicao;
+	}
+
+	public PessoaVO getPessoa() {
+		return Pessoa;
+	}
+
+	public void setPessoa(PessoaVO pessoa) {
+		Pessoa = pessoa;
 	}
 
 	public Calendar getDataUltEleicao() {
@@ -70,10 +82,10 @@ public class LiderVO extends ComunVO {
 		String saida;
 		saida = "------------------\nDados de Liderança\n------------------";
 
-		saida += "\nIdMembro: " + getIdComun() + "\tIdLíder: " + getIdLider() + "\nData da primeira eleição: "
+		saida += "\tIdLíder: " + getIdLider() + "\nData da primeira eleição: "
 				+ sdf.format(getDataPriEleicao().getTime()) + "\nData da última eleição: "
 				+ sdf.format(getDataUltEleicao().getTime()) + "\nOfício/Cargo: " + getCargoOficio()
-				+ "\nEntidade/Sociedade: " + getEntidade();
+				+ "\nEntidade/Sociedade: " + getEntidade() + "\nPessoa: " + Pessoa;
 
 		return saida;
 	}

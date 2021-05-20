@@ -148,17 +148,17 @@ public class Teste {
 			opcao = scan.nextInt();
 
 			switch (opcao) {
-			case 1:
-				menuIgreja();
-				break;
-			case 2:
-				menuVisitante();
-				break;
-			case 3:
-				menuAviso();
-				break;
-			default:
-				break;
+				case 1:
+					menuIgreja();
+					break;
+				case 2:
+					menuVisitante();
+					break;
+				case 3:
+					menuAviso();
+					break;
+				default:
+					break;
 			}
 
 		} while (opcao != 0);
@@ -179,20 +179,20 @@ public class Teste {
 			opcao = scan.nextInt();
 
 			switch (opcao) {
-			case 1:
-				adicionarIgreja(scan);
-				break;
-			case 2:
-				listarIgrejas();
-				break;
-			case 3:
-				imprimirIgrejas();
-				break;
-			case 4:
-				excluirIgreja(scan);
-				break;
-			default:
-				break;
+				case 1:
+					adicionarIgreja(scan);
+					break;
+				case 2:
+					listarIgrejas();
+					break;
+				case 3:
+					imprimirIgrejas();
+					break;
+				case 4:
+					excluirIgreja(scan);
+					break;
+				default:
+					break;
 			}
 		} while (opcao != 0);
 	}
@@ -212,20 +212,20 @@ public class Teste {
 			opcao = scan.nextInt();
 
 			switch (opcao) {
-			case 1:
-				adicionarVisitante();
-				break;
-			case 2:
-				listarVisitantes();
-				break;
-			case 3:
-				imprimirVisitantes();
-				break;
-			case 4:
-				deletaVisitante();
-				break;
-			default:
-				break;
+				case 1:
+					adicionarVisitante();
+					break;
+				case 2:
+					listarVisitantes();
+					break;
+				case 3:
+					imprimirVisitantes();
+					break;
+				case 4:
+					deletaVisitante();
+					break;
+				default:
+					break;
 			}
 		} while (opcao != 0);
 	}
@@ -245,20 +245,20 @@ public class Teste {
 			opcao = scan.nextInt();
 
 			switch (opcao) {
-			case 1:
-				adicionarAviso();
-				break;
-			case 2:
-				listarAvisos();
-				break;
-			case 3:
-				imprimirAviso();
-				break;
-			case 4:
-				excluirAvisoPorId(scan);
-				break;
-			default:
-				break;
+				case 1:
+					adicionarAviso();
+					break;
+				case 2:
+					listarAvisos();
+					break;
+				case 3:
+					imprimirAviso();
+					break;
+				case 4:
+					excluirAvisoPorId(scan);
+					break;
+				default:
+					break;
 			}
 		} while (opcao != 0);
 	}

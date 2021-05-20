@@ -39,8 +39,7 @@ public class LiderBO {
 
 	}
 
-	public LiderVO buscarComun(int idVisitante) {
-		// toDO
+	public LiderVO buscarLider(int idLider) {
 		LiderVO visitante = new LiderVO();
 
 		return visitante;

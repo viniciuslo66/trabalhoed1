@@ -6,8 +6,6 @@ import exception.InsertException;
 import igreja.ModelDAO.PessoaDAO;
 import igreja.ModelVO.PessoaVO;
 
-
-
 public class PessoaBO {
 	static private PessoaDAO<PessoaVO> dao = new PessoaDAO<PessoaVO>();
 
@@ -37,7 +35,7 @@ public class PessoaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public void alterarEstadoCivil(PessoaVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
@@ -50,7 +48,7 @@ public class PessoaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public void alterarEscolaridade(PessoaVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
@@ -63,7 +61,7 @@ public class PessoaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public void alterarProfissao(PessoaVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
@@ -76,7 +74,7 @@ public class PessoaBO {
 			throw new InsertException(e.getMessage());
 		}
 	}
-	
+
 	public void remover(PessoaVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
