@@ -39,7 +39,7 @@ public class ComunBO {
 
 	}
 
-	public ComunVO buscarComun(int idVisitante) {
+	public ComunVO buscarComun(int IdComun) {
 		// toDO
 		ComunVO visitante = new ComunVO();
 

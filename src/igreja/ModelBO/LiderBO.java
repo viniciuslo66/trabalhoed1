@@ -5,14 +5,14 @@ import java.sql.SQLException;
 import java.util.List;
 
 import exception.InsertException;
-import igreja.ModelDAO.ComunDAO;
-import igreja.ModelVO.ComunVO;
+import igreja.ModelDAO.LiderDAO;
+import igreja.ModelVO.LiderVO;
 
 public class LiderBO {
 
-	static private ComunDAO<ComunVO> dao = new ComunDAO<ComunVO>();
+	static private LiderDAO<LiderVO> dao = new LiderDAO<LiderVO>();
 
-	public void inserir(ComunVO vo) throws InsertException {
+	public void inserir(LiderVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
 			if (rs.next()) {
@@ -25,7 +25,7 @@ public class LiderBO {
 		}
 	}
 
-	public void remover(ComunVO vo) throws InsertException {
+	public void remover(LiderVO vo) throws InsertException {
 		try {
 			ResultSet rs = dao.buscar(vo);
 			if (rs.next()) {
@@ -39,15 +39,15 @@ public class LiderBO {
 
 	}
 
-	public ComunVO buscarComun(int idVisitante) {
+	public LiderVO buscarComun(int idVisitante) {
 		// toDO
-		ComunVO visitante = new ComunVO();
+		LiderVO visitante = new LiderVO();
 
 		return visitante;
 	}
 
-	public List<ComunVO> listar() {
-		List<ComunVO> visitantes = dao.listar();
+	public List<LiderVO> listar() {
+		List<LiderVO> visitantes = dao.listar();
 
 		return visitantes;
 	}

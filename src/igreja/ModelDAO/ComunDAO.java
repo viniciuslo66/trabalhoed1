@@ -65,7 +65,6 @@ public class ComunDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 		return cal;
 	}
 
-	@Override
 	public void inserir(VO comun) throws SQLException {
 		String sql = "insert into comun(idComun, idPessoa) values(?,?)";
 		PreparedStatement ptst;
@@ -90,7 +89,6 @@ public class ComunDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 		}
 	}
 
-	@Override
 	public void remover(VO comun) throws SQLException {
 		String sql = "DELETE FROM visitante WHERE idComun=?";
 		PreparedStatement ptst;
@@ -104,8 +102,7 @@ public class ComunDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 		}
 	}
 
-	@Override
-	public ResultSet buscar(VO vo) throws SQLException {
+	public ResultSet buscar(ComunVO vo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -139,4 +136,5 @@ public class ComunDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 		// TODO Auto-generated method stub
 
 	}
+
 }

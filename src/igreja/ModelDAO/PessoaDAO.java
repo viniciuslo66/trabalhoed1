@@ -60,8 +60,7 @@ public class PessoaDAO<VO extends PessoaVO> extends ConnectBD implements PessoaI
 			ex.printStackTrace();
 		}
 	}
-
-	@Override
+	
 	public void remover(VO pessoa) throws SQLException {
 		String sql = "DELETE FROM pessoa WHERE idPessoa=?";
 		PreparedStatement ptst;
@@ -75,7 +74,6 @@ public class PessoaDAO<VO extends PessoaVO> extends ConnectBD implements PessoaI
 		}
 	}
 
-	@Override
 	public ResultSet buscar(VO pessoa) throws SQLException {
 		String sql = "SELECT * FROM pessoa WHERE nomePessoa=?";
 		PreparedStatement ptst;

@@ -3,7 +3,7 @@ package igreja.ModelVO;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public abstract class PessoaVO {
+public class PessoaVO {
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("d/M/y");
 

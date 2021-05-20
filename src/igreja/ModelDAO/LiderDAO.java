@@ -5,12 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import igreja.ModelVO.IgrejaVO;
 import igreja.ModelVO.LiderVO;
 import igreja.ModelVO.PessoaVO;
 
@@ -31,7 +29,7 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 				((LiderVO) lid).setIdComun(resultado.getInt("idLider"));
 				((LiderVO) lid).setDataPriEleicao(toCalendar(resultado.getDate("DataPriEleicao")));
 				((LiderVO) lid).setDataUltEleicao(toCalendar(resultado.getDate("DataUltEleicao")));
-				((LiderVO) lid).setCargoOficio(resultado.getInt("DataEleicao"));
+				((LiderVO) lid).setCargoOficio(resultado.getInt("cargoOficial"));
 				((LiderVO) lid).setEntidade(resultado.getInt("entidade"));
 				lid.setNomePessoa(resultado.getString("nomePessoa"));
 				lid.setCongregaPessoa(resultado.getInt("congregaPessoa"));
@@ -72,7 +70,6 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 	}
 
 	public void inserir(LiderVO lider) throws SQLException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 		String sql = "insert into lider(idPessoa, dataPriEleicao, dataUltEleicao, CargoOficio, entidade) values(?,?,?,?,?)";
 		PreparedStatement ptst;
@@ -99,23 +96,22 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 			ex.printStackTrace();
 		}
 	}
-
-	@Override
+	
 	public void remover(VO lider) throws SQLException {
-		String sql = "DELETE FROM visitante WHERE idComun=?";
+		String sql = "DELETE FROM lider WHERE idLider = ?";
 		PreparedStatement ptst;
 		try {
 			ptst = getConnection().prepareStatement(sql);
-			ptst.setInt(1, ((LiderVO) lider).getIdComun());
+			ptst.setInt(1, ((LiderVO) lider).getIdLider());
 			ptst.executeUpdate();
 
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
 	}
-	
-	public ResultSet buscar(LiderVO lider) {
-		String sql = "select  from Pessoa inner join Comungante where Pessoa.idPessoa = Lider.idPessoa";
+
+	public ResultSet buscar(LiderVO lider) throws SQLException {
+		String sql = "select nome from Pessoa inner join Comungante where Pessoa.idPessoa = Lider.idPessoa";
 		PreparedStatement ptst;
 		ResultSet resultado = null;
 		try {
@@ -128,12 +124,37 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 		return resultado;
 	}
 
+	public PessoaVO buscarById (Integer id) throws SQLException {
+		String sql = "SELECT pessoa.nomePessoa, lider.dataPriEleicao, lider.cargoOficial FROM pessoa JOIN lider ON pessoa.idPessoa = lider.idPessoa WHERE lider.idLider = ?";
+		PreparedStatement ptst;
+		ResultSet res = null;
+
+		try {
+			ptst = getConnection().prepareStatement(sql);
+			ptst.setInt(1, id);
+			res = ptst.executeQuery();
+			if (res.next()) {
+				LiderVO lider = new LiderVO();
+				lider.setIdLider(res.getInt("idLider"));
+
+				PessoaVO pessoa = new PessoaVO();
+				pessoa.setIdPessoa(res.getInt("idPessoa"));
+				pessoa.setNomePessoa(res.getString("NomePessoa"));
+
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+
 	@Override
 	public void alterarEndereco(VO vo) throws SQLException {
 		// TODO Auto-generated method stub
 
 	}
-
 	@Override
 	public void alterarEstadoCivil(VO vo) throws SQLException {
 		// TODO Auto-generated method stub
@@ -156,11 +177,5 @@ public class LiderDAO<VO extends PessoaVO> extends ConnectBD implements PessoaIn
 	public void alterarCongrega(VO pessoa) throws SQLException {
 		// TODO Auto-generated method stub
 
-	}
-
-	@Override
-	public void inserir(VO vo) throws SQLException {
-		// TODO Auto-generated method stub
-		
 	}
 }

@@ -1,15 +1,14 @@
 package igreja.ModelDAO;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.sql.Date;
 import java.util.List;
 
-import igreja.ModelVO.LiderVO;
 import igreja.ModelVO.PessoaVO;
 import igreja.ModelVO.VisitanteVO;
 
@@ -65,8 +64,7 @@ public class VisitanteDAO<VO extends PessoaVO> extends ConnectBD implements Pess
 		cal.setTime(date);
 		return cal;
 	}
-
-	@Override
+	
 	public void inserir(VO visitante) throws SQLException {
 		String sql = "insert into visitante(idVisitante, idPessoa, dataUltVisita) values(?,?,?)";
 		PreparedStatement ptst;
@@ -91,8 +89,7 @@ public class VisitanteDAO<VO extends PessoaVO> extends ConnectBD implements Pess
 			ex.printStackTrace();
 		}
 	}
-
-	@Override
+	
 	public void remover(VO visitante) throws SQLException {
 		String sql = "DELETE FROM visitante WHERE idVisitante=?";
 		PreparedStatement ptst;
@@ -105,9 +102,8 @@ public class VisitanteDAO<VO extends PessoaVO> extends ConnectBD implements Pess
 			ex.printStackTrace();
 		}
 	}
-
-	@Override
-	public ResultSet buscar(VO vo) throws SQLException {
+	
+	public ResultSet buscar(VisitanteVO vo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -146,4 +142,6 @@ public class VisitanteDAO<VO extends PessoaVO> extends ConnectBD implements Pess
 		// TODO Auto-generated method stub
 
 	}
+
+	
 }
