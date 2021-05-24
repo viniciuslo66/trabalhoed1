@@ -41,14 +41,14 @@ public class ComunBO {
 
 	public ComunVO buscarComun(int IdComun) {
 		// toDO
-		ComunVO visitante = new ComunVO();
+		ComunVO comun = new ComunVO();
 
-		return visitante;
+		return comun;
 	}
 
-	public List<ComunVO> listar() {
-		List<ComunVO> visitantes = dao.listar();
+	public List<ComunVO> listar() throws SQLException {
+		List<ComunVO> comun = dao.listar();
 
-		return visitantes;
+		return comun;
 	}
 }

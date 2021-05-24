@@ -90,205 +90,115 @@
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <Label layoutX="377.0" layoutY="92.0" text="Igrejas">
+                  <Label layoutX="393.0" layoutY="92.0" text="Líder">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="70.0" layoutY="145.0" prefHeight="25.0" prefWidth="50.0" promptText="001">
+                  <TextField layoutX="70.0" layoutY="204.0" prefHeight="25.0" prefWidth="50.0" promptText="001">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="70.0" layoutY="200.0" prefHeight="25.0" prefWidth="610.0" promptText="Igreja Presbiteriana do Brasil">
+                  <TextField layoutX="70.0" layoutY="259.0" prefHeight="25.0" prefWidth="610.0" promptText="Giovanni Moreira Guimarães">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <ComboBox layoutX="707.0" layoutY="200.0" prefHeight="25.0" prefWidth="175.0" promptText="Igreja" visibleRowCount="3" />
-                  <TextField layoutX="70.0" layoutY="255.0" prefHeight="25.0" prefWidth="174.0" promptText="59600-000">
+                  <ComboBox layoutX="707.0" layoutY="259.0" prefHeight="30.0" prefWidth="175.0" promptText="Líder" visibleRowCount="3" />
+                  <DatePicker layoutX="71.0" layoutY="314.0" prefHeight="30.0" prefWidth="145.0" promptText="01/01/2001" />
+                  <TextField layoutX="237.0" layoutY="314.0" prefHeight="30.0" prefWidth="316.0" promptText="Pastor Titular">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="290.0" layoutY="255.0" prefHeight="25.0" prefWidth="174.0" promptText="(84) 3321-2698">
+                  <TextField layoutX="568.0" layoutY="314.0" prefHeight="30.0" prefWidth="316.0" promptText="Igreja Presbiteriana Central de Mossoró" text="Conselho">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="506.0" layoutY="255.0" prefHeight="25.0" prefWidth="174.0" promptText="igreja@ipb.org.br">
+                  <DatePicker layoutX="71.0" layoutY="370.0" prefHeight="30.0" prefWidth="145.0" promptText="01/01/2021" />
+                  <TextField layoutX="237.0" layoutY="370.0" prefHeight="30.0" prefWidth="316.0" promptText="Pastor Titular">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="707.0" layoutY="255.0" prefHeight="25.0" prefWidth="175.0" promptText="www.ipb.org.br">
+                  <TextField layoutX="568.0" layoutY="370.0" prefHeight="30.0" prefWidth="316.0" promptText="Igreja Presbiteriana Central de Mossoró" text="Conselho">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="70.0" layoutY="310.0" prefHeight="25.0" prefWidth="610.0" promptText="Rua das Acácias, 53">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="707.0" layoutY="310.0" prefHeight="25.0" prefWidth="175.0" promptText="Centro">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="70.0" layoutY="365.0" promptText="Mossoró">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="262.0" layoutY="365.0" prefHeight="25.0" prefWidth="37.0" promptText="RN">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="316.0" layoutY="365.0" prefHeight="25.0" prefWidth="174.0" promptText="08.001.999/0001-34">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <DatePicker layoutX="506.0" layoutY="365.0" promptText="15/11/20015" />
-                  <TextField layoutX="708.0" layoutY="365.0" prefHeight="25.0" prefWidth="175.0" promptText="18h">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="70.0" layoutY="420.0" prefHeight="25.0" prefWidth="237.0" promptText="Rev. Samuel Bezerra Ribeiro">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <ComboBox layoutX="330.0" layoutY="420.0" prefWidth="150.0" promptText="Titular" visibleRowCount="4" />
-                  <TextField layoutX="506.0" layoutY="420.0" prefHeight="25.0" prefWidth="174.0" promptText="PROR">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="710.0" layoutY="420.0" prefHeight="25.0" prefWidth="175.0" promptText="9h">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextArea layoutX="70.0" layoutY="479.0" prefHeight="50.0" prefWidth="815.0" promptText="Anotações importantes">
+                  <TextArea layoutX="70.0" layoutY="431.0" prefHeight="113.0" prefWidth="815.0" promptText="Anotações importantes">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextArea>
-                  <ListView layoutX="70.0" layoutY="576.0" prefHeight="200.0" prefWidth="815.0" />
-                  <Button layoutX="708.0" layoutY="118.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #005131;" text="Salvar" textFill="#f5f5f5">
+                  <ListView layoutX="70.0" layoutY="575.0" prefHeight="177.0" prefWidth="815.0" />
+                  <Label layoutX="71.0" layoutY="184.0" text="ID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="239.0" text="Nome">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="708.0" layoutY="239.0" text="Tipo">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="72.0" layoutY="294.0" text="Primeira Eleição">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="236.0" layoutY="294.0" text="Cargo/Ofício">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="569.0" layoutY="294.0" text="Entidade">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="73.0" layoutY="350.0" text="Última Eleição">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="236.0" layoutY="350.0" text="Cargo/Ofício">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="569.0" layoutY="350.0" text="Entidade">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="410.0" text="Observações">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="71.0" layoutY="552.0" text="Líderes Cadastrados">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="708.0" layoutY="193.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #005131;" text="Salvar" textFill="#f5f5f5">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="802.0" layoutY="118.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #005131;" text="Cancelar" textFill="WHITE">
+                  <Button layoutX="802.0" layoutY="193.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #005131;" text="Cancelar" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Label layoutX="71.0" layoutY="125.0" text="ID">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="180.0" text="Nome">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="708.0" layoutY="180.0" text="Tipo">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="235.0" text="CEP">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="291.0" layoutY="235.0" text="Telefone">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="507.0" layoutY="235.0" text="E-mail">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="708.0" layoutY="235.0" text="Site">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="290.0" text="Logradouro">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="708.0" layoutY="290.0" text="Bairro">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="345.0" text="Cidade">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="263.0" layoutY="345.0" text="UF">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="317.0" layoutY="345.0" text="CNPJ">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="507.0" layoutY="345.0" text="Organização">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="709.0" layoutY="345.0" text="Culto">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="400.0" text="Pastor Titular">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="331.0" layoutY="400.0" text="Condição">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="507.0" layoutY="400.0" text="Presbitério">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="709.0" layoutY="400.0" text="Escola Dominical">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="459.0" text="Observações">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="559.0" text="Igrejas Cadastradas">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
                </children>
             </AnchorPane>
         </items>
